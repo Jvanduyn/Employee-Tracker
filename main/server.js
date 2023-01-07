@@ -1,5 +1,13 @@
-const PORT = process.env.PORT || 3001;
-const app = express();
+const inquirer = require('inquirer');
+const mysql = require('mysql2');
+
+function init() {
+    inquirer.createPromptModule([
+        {
+
+        }
+    ])
+}
 
 // Express middleware
 app.use(express.urlencoded({ extended: false }));
