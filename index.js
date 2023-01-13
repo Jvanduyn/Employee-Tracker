@@ -105,31 +105,31 @@ function addEmployee() {
 // ask what role they would like to change it to
 function updateEmployeeRole() {
     db.query('SELECT * FROM employee', function (err, results) {
-        const employeeArr = results.map(({ id, title }) => ({
-            name: title,
+        const employeeArr = results.map(({ first_name, role_id }) => ({
+            name: first_name,
+            value: role_id
+        }))
+        const rolearr = results.map(({ department_id, title }) => ({
+            name: department_id,
             value: title
         }))
         inquirer.prompt([
-            {
-                type: 'input',
-                name: 'first_name',
-                message: 'What is the employees first name?',
-            },
-            {
-                type: 'input',
-                name: 'last_name',
-                message: 'What is the employees last name?',
-            },
             {
                 type: 'list',
                 name: 'title',
                 message: 'What is the employees name you would like to update?',
                 choices: employeeArr,
             },
+            {
+                type: 'list',
+                name: 'title',
+                message: 'What is this employees role?',
+                choices: rolearr,
+            },
         ]).then((answers) => {
-            const sql = `INSERT INTO employee (first_name, last_name, role_id)
+            const sql = `UDPATE employee SET employee (title, salary, department_id)
             VALUES (?,?,?)`;
-            const params = [answers.first_name, answers.last_name, answers.role_id]
+            const params = [answers.title, answers.salary, answers.department_id]
 
             db.query(sql, params, (err, result) => {
                 if (err) {
