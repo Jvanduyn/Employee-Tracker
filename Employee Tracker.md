@@ -7,6 +7,8 @@
   
   This project was created in order to showcase how I can create multiple tables using SQL and also create a database that the user can modify the data stored within. The database being created is an employee databse where the user can store the employees information, information for each role within the company, and each departments information. They then can view and modify any data in that table for future use. 
 
+  You can view the video here! https://www.youtube.com/watch?v=XEq86KOYg0I
+
   ![alt text](./assets/employeevideo.mov)
   
   ## Table of Contents
