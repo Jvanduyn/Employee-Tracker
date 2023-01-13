@@ -162,7 +162,7 @@ function addRole() {
             {
                 type: 'input',
                 name: 'title',
-                message: 'What is the department?',
+                message: 'What is the role you would like to add?',
             },
             {
                 type: 'list',
@@ -173,7 +173,7 @@ function addRole() {
             {
                 type: 'input',
                 name: 'salary',
-                message: 'What is the department?',
+                message: 'What is the salary of this position?',
             },
         ]).then((answers) => {
             const sql = `INSERT INTO role (title, salary, department_id)
